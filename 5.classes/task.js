@@ -9,7 +9,7 @@ class PrintEditionItem {
         this.type = null;
     }
     fix() {
-        this.state = Math.min(100, this.state * 1.5);
+        this.state *= 1.5;
     }
     set state(newState) {
         if (newState < 0) {
@@ -66,7 +66,7 @@ class DetectiveBook extends Book {
 class Library {
     constructor(name) {
         this.name = name;
-        this.book = [];
+        this.books = [];
     }
     addBook(book) {
         if (book.state > 30) {
@@ -84,7 +84,7 @@ class Library {
     giveBookByName(bookName) {
         const bookIndex = this.books.findIndex((book) => book.name === bookName);
         if (bookIndex !== -1) {
-            const book = this.books.splise(bookIndex, 1)[0];
+            const book = this.books.splice(bookIndex, 1)[0];
             return book;
         }
         return null;
