@@ -114,17 +114,17 @@ class Student {
         }
         const marksForSubject = this.marks[subject];
         const sum = marksForSubject.reduce((acc, mark) => acc + mark, 0);
-        return sum / marksForSubject.lenght;
+        return sum / marksForSubject.length;
     }
     getAverage() {
-        const subject = Object.keys(this.marks);
-        if (subjects.lenght === 0) {
+        const subjects = Object.keys(this.marks);
+        if (subjects.length === 0) {
             return 0;
         }
         let totalAverage = 0;
         for (const subject of subjects) {
             totalAverage += this.getAverageBySubject(subject);
         }
-        return totalAverage / subject.length;
+        return totalAverage / subjects.length;
     }
 }
